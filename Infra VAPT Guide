@@ -1,0 +1,99 @@
+Infrastructure Vulnerability Assessment and Penetration Testing (VAPT)
+Steps to Perform Infra Vulnerability Assessment (VA) and Penetration Testing (PT)
+1. Define the Scope
+
+    Identify and document the IP ranges and systems to be tested (e.g., Firewalls, Desktops, Servers, AP Controllers).
+
+2. Tools Employed
+
+    Tenable Nessus
+    Nmap
+    Metasploit Framework
+    SSL Scan
+    OpenSSL
+    Testssl.sh
+    Wireshark
+
+3. Scope of Testing
+
+    For standard testing, avoid performing DoS, DDoS, Brute Force, etc.
+
+4. Initiate Nessus Scan
+
+    Choose the appropriate template for scanning. For this scenario, use the Advanced Scan option.
+    Define a name, description, and target IPs.
+    Save the template or adjust according to your standards.
+
+5. Start the Scan
+
+    Initiate the scan after configuring the settings.
+
+6. Review the Scan Results
+
+    After the scan finishes, you will get a list of vulnerabilities.
+    Perform a risk assessment and categorize the vulnerabilities based on their severity.
+
+7. Learning About Vulnerabilities
+
+    During the learning phase, you might not be familiar with all vulnerabilities.
+    Use Google or an AI model like PentesterGPT to understand the vulnerabilities, including descriptions, impacts, and mitigations.
+
+8. Understanding Vulnerability Assessment (VA) and Penetration Testing (PT)
+
+    VA (Vulnerability Assessment): The process of identifying and verifying vulnerabilities using various tools.
+    PT (Penetration Testing): The process of exploiting identified vulnerabilities (if approved) to determine how they can be exploited.
+
+9. Example Vulnerability: Expired or Self-Signed SSL Certificate
+
+    For this scenario, let's use the Expired or Self-Signed SSL Certificate vulnerability.
+
+10. Proving the Vulnerability with Nmap
+
+    Use Nmap to gather proof of concept (POC) for the vulnerability:
+
+    nmap -p 443,8443 --script ssl-cert,ssl-enum-ciphers <target>
+
+    This will enumerate SSL certificates and ciphers, allowing you to confirm the vulnerability.
+
+11. Standard Testing (No Penetration Testing for this Vulnerability)
+
+    For vulnerabilities like expired or self-signed SSL certificates, no penetration testing is needed unless otherwise specified by the client.
+
+12. Exploiting Vulnerabilities (When Approved)
+
+    If the client has approved exploitation (e.g., for a vulnerability like Microsoft Queue Jumper), use Metasploit or relevant exploitation modules from hacking databases.
+
+13. Revalidation
+
+    After taking POCs, revalidate the vulnerabilities to ensure no new issues arise.
+    If any new vulnerabilities are found, perform further testing and document accordingly.
+
+14. Reporting
+
+    Most organizations will have their own reporting templates. Modify the templates to include your findings.
+    Make the report understandable and accessible to the client.
+
+15. Client Remediation
+
+    After the report submission, the client will begin remediation.
+    Once remediation is completed, perform revalidation to ensure that the vulnerabilities have been fixed.
+
+16. Revalidation Process
+
+    Perform the same scan and checks to verify that previously identified vulnerabilities have been remediated.
+    Document and report the revalidation findings.
+
+17. Audit Certificate
+
+    After revalidation and ensuring that vulnerabilities have been fixed, the management team will issue an audit certificate to the client.
+    This signifies the completion of the VAPT process.
+
+18. Types of Reports
+
+    Technical Report: Includes all the vulnerabilities discovered in Phase 1.
+    Null Report: For IPs that were found to be non-vulnerable.
+    Interim Report: Provides detailed explanations and mitigation strategies for the vulnerabilities identified in the technical report.
+
+    This is a sample Infrastructure VAPT workflow. While the exact process may vary across organizations, this basic structure provides a solid foundation. It can be especially helpful for those who aspire to build a career in cybersecurity.
+
+"Every expert was once a beginner. The first step you take today could define your success tomorrow."
